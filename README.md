@@ -7,4 +7,8 @@
 
  - Para a documentação basta entrar no localhost:3000/api
 
- - Por fim, rode as migrações com o comando <npx ou yarn> prisma migrate dev
+ - Rode as migrações com o comando <npx ou yarn> prisma migrate dev
+
+ - Para fazer o build, rode o comando npm run build 
+
+ - Para rodar a API localmente, rode npm run start:prod

@@ -16,8 +16,9 @@ export class ContactsController {
   create(@Body() createContactDto: CreateContactDto, @Request() req:any) {
     return this.contactsService.create(createContactDto, req.user.id);
   }
+
   
-  @Get()
+  @Get('')
   @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   findAll() {

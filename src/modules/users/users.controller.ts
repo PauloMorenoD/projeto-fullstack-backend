@@ -17,15 +17,12 @@ export class UsersController {
 
   @Get('')
   @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
-
   findAll() {
     return this.usersService.findAll();
   }
   
   @Get(':id')
   @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);
   }

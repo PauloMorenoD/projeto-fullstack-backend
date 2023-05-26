@@ -38,9 +38,15 @@ export class UserPrismaRepository implements UsersRepository {
     }
     
     async delete(id: number): Promise<void> {
+
         await this.prisma.users.delete({
-            where: { id }
+            where: { id },
+            include:{
+                contacts:true
+            }
         })
+
+        
     }
     
     async findUserByEmail(email: string): Promise<User> {

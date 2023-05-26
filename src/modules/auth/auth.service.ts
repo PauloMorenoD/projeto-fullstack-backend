@@ -1,5 +1,4 @@
 import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { UsersRepository } from '../users/repositories/users.repository';
 import { UsersService } from '../users/users.service';
 import { compare } from "bcryptjs"
 import { JwtService } from '@nestjs/jwt';
@@ -26,7 +25,8 @@ export class AuthService {
         const user = await this.userService.findByEmail(email)
 
         return {
-            token: this.jwtService.sign({ email }, {subject: String(user.id)})
+            token: this.jwtService.sign({ email }, {subject: String(user.id)}),
+            userId: user.id
         }
     }
 }

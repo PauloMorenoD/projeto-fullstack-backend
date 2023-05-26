@@ -17,7 +17,7 @@ model Users {
   password     String
   phone        String     @unique
   registerDate DateTime   @default(now())
-  contacts     Contacts[]
+  contacts     Contacts[] 
 
   @@map("users")
 }
@@ -28,7 +28,7 @@ model Contacts {
   email        String   @unique
   phone        String   @unique
   registerDate DateTime @default(now())
-  users        Users   @relation(fields: [userId], references: [id])
+  users        Users   @relation(fields: [userId], references: [id], onDelete: Restrict)
   userId       Int
 
   @@map("contacts")
