@@ -12,3 +12,5 @@
  - Para fazer o build, rode o comando npm run build 
 
  - Para rodar a API localmente, rode npm run start:prod
+
+- Este projeto é um projeto fullstack em conjunto com o projeto deste repositório :https://github.com/PauloMorenoD/projeto-fullstack-frontend

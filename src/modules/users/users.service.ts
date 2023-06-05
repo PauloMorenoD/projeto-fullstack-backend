@@ -52,9 +52,6 @@ export class UsersService {
     const findUserByEmail = await this.usersRepository.findUserByEmail(updateUserDto.email)
     const findUserPhone = await this.usersRepository.findUserByPhone(updateUserDto.phone)
     
-    console.log(findUserByEmail)
-    console.log(findUserPhone)
-
     if (findUserPhone) throw new ConflictException("phone already exists!")
     if (findUserByEmail) throw new ConflictException("email already exists!")
 
